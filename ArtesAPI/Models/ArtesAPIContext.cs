@@ -17,5 +17,6 @@ namespace ArtesAPI.Models
         public DbSet<Company> Companies { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Art> Arts { get; set; }
+        public DbSet<Logo> Logos { get; set; }
     }
 }

@@ -88,3 +88,4 @@ C:\Users\gerso\Documents\GitHub\ArtesAPI\ArtesAPI\obj\Debug\ArtesAPI.dll
 C:\Users\gerso\Documents\GitHub\ArtesAPI\ArtesAPI\obj\Debug\ArtesAPI.pdb
 C:\Users\gerso\Documents\GitHub\ArtesAPI\ArtesAPI\obj\Debug\ArtesAPI.Migrations.First.resources
 C:\Users\gerso\Documents\GitHub\ArtesAPI\ArtesAPI\obj\Debug\ArtesAPI.csproj.GenerateResource.cache
+C:\Users\gerso\Documents\GitHub\ArtesAPI\ArtesAPI\obj\Debug\ArtesAPI.Migrations.AddLogoModel.resources
