@@ -12,13 +12,13 @@ namespace ArtesAPI.Models
         [Key]
         public int IdCompany { get; set; }
         public String CompanyName { get; set; }
+        public String Code { get; set; }
         public String Description { get; set; }
-        public String Rules { get; set; }
         public String Direction { get; set; }
+        public String City { get; set; }
+        public String Department { get; set; }
+        public String ImageURL { get; set; }
         public Boolean State { get; set; }
-        public String Colors { get; set; }
-        public String Pet { get; set; }
-        public String Logos { get; set; }
         public String UserCreate { get; set; }
         public DateTime CreateDate { get; set; }
         public String UserModified { get; set; }

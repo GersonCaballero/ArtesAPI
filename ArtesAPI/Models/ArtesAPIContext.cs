@@ -18,5 +18,12 @@ namespace ArtesAPI.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Art> Arts { get; set; }
         public DbSet<Logo> Logos { get; set; }
+        public DbSet<ValueLogo> ValueLogos { get; set; }
+        public DbSet<Rule> Rules { get; set; }
+
+        public DbSet<Pet> Pets { get; set; }
+        public DbSet<GarmentColor> GarmentColors { get; set; }
+        public DbSet<Font> Fonts { get; set; }
+        public DbSet<Color> Colors { get; set; }
     }
 }
