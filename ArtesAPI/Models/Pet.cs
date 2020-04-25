@@ -7,11 +7,11 @@ using System.Web;
 
 namespace ArtesAPI.Models
 {
-    public class Logo
+    public class Pet
     {
         [Key]
-        public int IdLogo { get; set; }
-        public String NameLogo { get; set; }
+        public int IdPet { get; set; }
+        public String Name { get; set; }
         public String Description { get; set; }
         public String ImageURL { get; set; }
         public String ArchiveURL { get; set; }
