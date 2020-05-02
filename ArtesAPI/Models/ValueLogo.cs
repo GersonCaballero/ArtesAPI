@@ -12,5 +12,10 @@ namespace ArtesAPI.Models
         public int IdValueLogo { get; set; }
         public String Name { get; set; }
         public String Description { get; set; }
+        public Boolean State { get; set; }
+        public String UserCreate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public String UserModified { get; set; }
+        public DateTime ModifiedDate { get; set; }
     }
 }

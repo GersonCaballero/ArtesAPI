@@ -13,7 +13,7 @@ namespace ArtesAPI.Models
         public int IdArt { get; set; }
         public String ArtName { get; set; }
         public String Description { get; set; }
-        public String ArchiveURL { get; set; }
+        public String ImageURL { get; set; }
         public Boolean State { get; set; }
         public String UserCreate { get; set; }
         public DateTime CreateDate { get; set; }

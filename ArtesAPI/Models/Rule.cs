@@ -12,6 +12,11 @@ namespace ArtesAPI.Models
         [Key]
         public int IdRule { get; set; }
         public String Rules { get; set; }
+        public Boolean State { get; set; }
+        public String UserCreate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public String UserModified { get; set; }
+        public DateTime ModifiedDate { get; set; }
 
         [ForeignKey(nameof(IdCompany))]
         public virtual Company Company { get; set; }

@@ -14,6 +14,11 @@ namespace ArtesAPI.Models
         public String Name { get; set; }
         public String Description { get; set; }
         public String ImageURL { get; set; }
+        public Boolean State { get; set; }
+        public String UserCreate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public String UserModified { get; set; }
+        public DateTime ModifiedDate { get; set; }
 
         [ForeignKey(nameof(IdCompany))]
         public virtual Company Company { get; set; }

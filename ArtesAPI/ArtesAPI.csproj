@@ -171,7 +171,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogoesController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
-    <Compile Include="Controllers\RulesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\UserTypesController.cs" />
     <Compile Include="Controllers\ValueLogoesController.cs" />
