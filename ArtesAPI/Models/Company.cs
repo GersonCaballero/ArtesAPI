@@ -23,9 +23,5 @@ namespace ArtesAPI.Models
         public DateTime CreateDate { get; set; }
         public String UserModified { get; set; }
         public DateTime ModifiedDate { get; set; }
-
-        [ForeignKey(nameof(IdCompanyType))]
-        public virtual CompanyType CompanyType { get; set; }
-        public int IdCompanyType { get; set; }
     }
 }

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using ArtesAPI.Models;
 
 namespace ArtesAPI.Controllers
 {
+    [Authorize]
+    [EnableCors("*", "*", "*")]
     public class ArtsController : ApiController
     {
         private ArtesAPIContext db = new ArtesAPIContext();
@@ -19,7 +22,7 @@ namespace ArtesAPI.Controllers
         // GET: api/Arts
         public IQueryable<Art> GetArts()
         {
-            return db.Arts;
+            return db.Arts.Where(x => x.State == true);
         }
 
         // GET: api/Arts/5
@@ -82,7 +85,7 @@ namespace ArtesAPI.Controllers
             db.Arts.Add(art);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = art.IdArt }, art);
+            return Ok(new { message = "Arte creado exitosamente" });
         }
 
         // DELETE: api/Arts/5

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using ArtesAPI.Models;
 
 namespace ArtesAPI.Controllers
 {
+    [Authorize]
+    [EnableCors("*", "*", "*")]
     public class GarmentColorsController : ApiController
     {
         private ArtesAPIContext db = new ArtesAPIContext();
@@ -19,7 +22,7 @@ namespace ArtesAPI.Controllers
         // GET: api/GarmentColors
         public IQueryable<GarmentColor> GetGarmentColors()
         {
-            return db.GarmentColors;
+            return db.GarmentColors.Where(x => x.State == true);
         }
 
         // GET: api/GarmentColors/5
@@ -82,7 +85,7 @@ namespace ArtesAPI.Controllers
             db.GarmentColors.Add(garmentColor);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = garmentColor.IdGarmentColor }, garmentColor);
+            return Ok(new { message = "Color de prenda creado exitosamente" });
         }
 
         // DELETE: api/GarmentColors/5

@@ -20,8 +20,8 @@ namespace ArtesAPI.Models
         public String UserModified { get; set; }
         public DateTime ModifiedDate { get; set; }
 
-        [ForeignKey(nameof(IdUser))]
-        public virtual User User { get; set; }
-        public int IdUser { get; set; }
+        [ForeignKey(nameof(IdCompany))]
+        public virtual Company Company { get; set; }
+        public int IdCompany { get; set; }
     }
 }
