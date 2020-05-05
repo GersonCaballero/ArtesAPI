@@ -53,14 +53,32 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.5.1\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.5.1\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.5.1\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.5.1\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -166,12 +184,15 @@
     <Compile Include="Controllers\ColorsController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\CompanyTypesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\FontsController.cs" />
     <Compile Include="Controllers\GarmentColorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoesController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
-    <Compile Include="Controllers\RulesController.cs" />
+    <Compile Include="Controllers\TokenGenerator.cs" />
+    <Compile Include="Controllers\TokenValidationHandler.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\UserTypesController.cs" />
     <Compile Include="Controllers\ValueLogoesController.cs" />
@@ -187,6 +208,34 @@
     <Compile Include="Migrations\202001060439145_AddLogoModel.designer.cs">
       <DependentUpon>202001060439145_AddLogoModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005031637255_update.cs" />
+    <Compile Include="Migrations\202005031637255_update.designer.cs">
+      <DependentUpon>202005031637255_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031642267_update1.cs" />
+    <Compile Include="Migrations\202005031642267_update1.designer.cs">
+      <DependentUpon>202005031642267_update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031651095_update2.cs" />
+    <Compile Include="Migrations\202005031651095_update2.designer.cs">
+      <DependentUpon>202005031651095_update2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031653345_update3.cs" />
+    <Compile Include="Migrations\202005031653345_update3.designer.cs">
+      <DependentUpon>202005031653345_update3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031656107_update4.cs" />
+    <Compile Include="Migrations\202005031656107_update4.designer.cs">
+      <DependentUpon>202005031656107_update4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031951033_update5.cs" />
+    <Compile Include="Migrations\202005031951033_update5.designer.cs">
+      <DependentUpon>202005031951033_update5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005032042330_update6.cs" />
+    <Compile Include="Migrations\202005032042330_update6.designer.cs">
+      <DependentUpon>202005032042330_update6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Art.cs" />
     <Compile Include="Models\ArtesAPIContext.cs" />
@@ -195,6 +244,8 @@
     <Compile Include="Models\CompanyType.cs" />
     <Compile Include="Models\Font.cs" />
     <Compile Include="Models\GarmentColor.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\LoginRequest.cs" />
     <Compile Include="Models\Logo.cs" />
     <Compile Include="Models\Pet.cs" />
     <Compile Include="Models\Rule.cs" />
@@ -292,6 +343,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001060439145_AddLogoModel.resx">
       <DependentUpon>202001060439145_AddLogoModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031637255_update.resx">
+      <DependentUpon>202005031637255_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031642267_update1.resx">
+      <DependentUpon>202005031642267_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031651095_update2.resx">
+      <DependentUpon>202005031651095_update2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031653345_update3.resx">
+      <DependentUpon>202005031653345_update3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031656107_update4.resx">
+      <DependentUpon>202005031656107_update4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031951033_update5.resx">
+      <DependentUpon>202005031951033_update5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005032042330_update6.resx">
+      <DependentUpon>202005032042330_update6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

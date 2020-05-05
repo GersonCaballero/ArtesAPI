@@ -7,11 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using ArtesAPI.Models;
 
 namespace ArtesAPI.Controllers
 {
+    [Authorize]
+    [EnableCors("*", "*", "*")]
     public class ValueLogoesController : ApiController
     {
         private ArtesAPIContext db = new ArtesAPIContext();
@@ -19,7 +22,7 @@ namespace ArtesAPI.Controllers
         // GET: api/ValueLogoes
         public IQueryable<ValueLogo> GetValueLogos()
         {
-            return db.ValueLogos;
+            return db.ValueLogos.Where(x => x.State == true);
         }
 
         // GET: api/ValueLogoes/5
@@ -82,7 +85,7 @@ namespace ArtesAPI.Controllers
             db.ValueLogos.Add(valueLogo);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = valueLogo.IdValueLogo }, valueLogo);
+            return Ok(new { message = "Valor de logo creado exitosamente" });
         }
 
         // DELETE: api/ValueLogoes/5
