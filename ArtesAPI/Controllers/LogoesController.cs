@@ -22,7 +22,7 @@ namespace ArtesAPI.Controllers
         // GET: api/Logoes
         public IQueryable<Logo> GetLogos()
         {
-            return db.Logos;
+            return db.Logos.Where(x => x.Status == true);
         }
 
         // GET: api/Logoes/5
@@ -85,7 +85,7 @@ namespace ArtesAPI.Controllers
             db.Logos.Add(logo);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = logo.IdLogo }, logo);
+            return Ok(new { message = "Logo creado exitosamente" });
         }
 
         // DELETE: api/Logoes/5
