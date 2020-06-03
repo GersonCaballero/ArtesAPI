@@ -85,7 +85,7 @@ namespace ArtesAPI.Controllers
             db.Fonts.Add(font);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = font.IdFont }, font);
+            return Ok(new { message = "Fuente creada exitosamente" });
         }
 
         // DELETE: api/Fonts/5
