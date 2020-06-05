@@ -22,7 +22,7 @@ namespace ArtesAPI.Controllers
         // GET: api/Fonts
         public IQueryable<Font> GetFonts()
         {
-            return db.Fonts;
+            return db.Fonts.Where(x => x.State == true);
         }
 
         // GET: api/Fonts/5
