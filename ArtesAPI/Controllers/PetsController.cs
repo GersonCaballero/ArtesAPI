@@ -22,7 +22,7 @@ namespace ArtesAPI.Controllers
         // GET: api/Pets
         public IQueryable<Pet> GetPets()
         {
-            return db.Pets;
+            return db.Pets.Where(x => x.Status == true);
         }
 
         // GET: api/Pets/5
