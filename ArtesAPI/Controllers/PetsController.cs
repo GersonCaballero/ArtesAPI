@@ -85,7 +85,7 @@ namespace ArtesAPI.Controllers
             db.Pets.Add(pet);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = pet.IdPet }, pet);
+            return Ok(new { message = "Mascota creada exitosamente" });
         }
 
         // DELETE: api/Pets/5
