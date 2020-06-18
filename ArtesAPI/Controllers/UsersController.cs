@@ -85,7 +85,7 @@ namespace ArtesAPI.Controllers
             db.Users.Add(user);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = user.IdUser }, user);
+            return Ok(new { message = "Usuario creado exitosamente" });
         }
 
         // DELETE: api/Users/5
